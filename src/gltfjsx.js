@@ -36,7 +36,7 @@ export default function (file, output, options) {
         // Process GLTF
         if (options.transform || options.instance || options.instanceall) {
           const { name } = path.parse(file)
-          const transformOut = path.join(name + '-transformed.glb')
+          const transformOut = path.join(`${name}.glb`)
           await transform(file, transformOut, options)
           file = transformOut
         }
@@ -53,7 +53,7 @@ export default function (file, output, options) {
             stream.end()
             resolve()
           },
-          reason => {
+          (reason) => {
             console.log(reason)
           }
         )

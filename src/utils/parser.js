@@ -9,8 +9,7 @@ function parse(gltf, { fileName = 'model', ...options } = {}) {
     gltf = { scene: gltf, animations: [], parser: { json: {} } }
   }
 
-  // const url = (fileName.toLowerCase().startsWith('http') ? '' : '/') + fileName
-  const url = '${process.env.NEXT_PUBLIC_MODEL_BASE_URL}/' + fileName
+  const url = (fileName.toLowerCase().startsWith('http') ? '' : '${process.env.NEXT_PUBLIC_MODEL_BASE_URL}/') + fileName
   const animations = gltf.animations
   const hasAnimations = animations.length > 0
 

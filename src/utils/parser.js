@@ -448,7 +448,7 @@ ${parseExtras(gltf.parser.json.asset && gltf.parser.json.asset.extras)}*/
             ? `
         const context = createContext()
         export default function Instances({ children, ...props }) {
-          const { nodes } = useGLTF('${url}'${options.draco ? `, ${JSON.stringify(options.draco)}` : ''})${
+          const { nodes } = useGLTF(\`${url}\`${options.draco ? `, ${JSON.stringify(options.draco)}` : ''})${
                 options.types ? ' as GLTFResult' : ''
               }
           const instances = useMemo(() => ({
@@ -471,7 +471,7 @@ ${parseExtras(gltf.parser.json.asset && gltf.parser.json.asset.extras)}*/
     hasAnimations ? `const group = ${options.types ? 'useRef<THREE.Group>()' : 'useRef()'};` : ''
   } ${
     !options.instanceall
-      ? `const { nodes, materials${hasAnimations ? ', animations' : ''} } = useGLTF('${url}'${
+      ? `const { nodes, materials${hasAnimations ? ', animations' : ''} } = useGLTF(\`${url}\`${
           options.draco ? `, ${JSON.stringify(options.draco)}` : ''
         })${options.types ? ' as GLTFResult' : ''}`
       : ''
@@ -483,7 +483,7 @@ ${parseExtras(gltf.parser.json.asset && gltf.parser.json.asset.extras)}*/
           )
         }
 
-useGLTF.preload('${url}')`
+useGLTF.preload(\`${url}\`)`
   return prettier.format(result, {
     semi: false,
     printWidth: options.printwidth || 1000,

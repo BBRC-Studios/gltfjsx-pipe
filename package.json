@@ -1,10 +1,11 @@
 {
-  "name": "gltfjsx",
-  "version": "6.2.8",
+  "name": "@bbrc-studios/gltfjsx-pipe",
+  "version": "6.2.9",
   "description": "GLTF to JSX converter",
   "scripts": {
     "build": "rollup -c",
-    "test": "node src/test"
+    "test": "node src/test",
+    "publish": "npm version patch --force && npm publish --access public"
   },
   "type": "module",
   "keywords": [
@@ -16,19 +17,19 @@
     "threejs",
     "webp"
   ],
-  "author": "Paul Henschel",
+  "author": "buooy",
   "maintainers": [
-    "Max Rusan"
+    "loocurse"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmndrs/gltfjsx.git"
+    "url": "git+https://github.com/BBRC-Studios/gltfjsx-pipe.git"
   },
   "bugs": {
-    "url": "https://github.com/pmndrs/gltfjsx/issues"
+    "url": "https://github.com/BBRC-Studios/gltfjsx-pipe/issues"
   },
-  "homepage": "https://github.com/pmndrs/gltfjsx#readme",
+  "homepage": "https://github.com/BBRC-Studios/gltfjsx-pipe",
   "bin": {
     "gltfjsx": "./cli.js"
   },
@@ -88,9 +89,5 @@
     "*.{js,jsx,ts,tsx}": [
       "prettier --write"
     ]
-  },
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/react-three-fiber"
   }
 }

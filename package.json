@@ -5,7 +5,8 @@
   "scripts": {
     "build": "rollup -c",
     "test": "node src/test",
-    "publish": "npm version patch --force && npm publish --access public"
+    "publish": "npm version patch --force && npm publish --access public",
+    "publish:minor": "npm version minor --force && npm publish --access public"
   },
   "type": "module",
   "keywords": [

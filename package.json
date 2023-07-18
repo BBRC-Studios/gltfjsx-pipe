@@ -1,6 +1,6 @@
 {
   "name": "@bbrc-studios/gltfjsx-pipe",
-  "version": "6.3.2",
+  "version": "6.3.3",
   "description": "GLTF to JSX converter",
   "scripts": {
     "build": "rollup -c",

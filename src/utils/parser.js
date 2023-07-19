@@ -435,10 +435,10 @@ function parse(gltf, { fileName = 'model', ...options } = {}) {
 ${options.header ? options.header : ''}
 ${parseExtras(gltf.parser.json.asset && gltf.parser.json.asset.extras)}*/
         ${options.types ? `\nimport * as THREE from 'three'` : ''}
-        import { useGLTF, ${hasInstances ? 'Merged, ' : ''} ${
+        import { useGLTF, ${hasInstances ? 'Merged, ' : ''} /* ${
     scene.includes('PerspectiveCamera') ? 'PerspectiveCamera,' : ''
-  }
-        ${scene.includes('OrthographicCamera') ? 'OrthographicCamera,' : ''}
+  } */
+        /* ${scene.includes('OrthographicCamera') ? 'OrthographicCamera,' : ''} */
         ${hasAnimations ? 'useAnimations' : ''} } from '@react-three/drei'
         ${options.types ? 'import { GLTF } from "three-stdlib"' : ''}
         ${options.types ? printTypes(objects, animations) : ''}
@@ -466,7 +466,7 @@ ${parseExtras(gltf.parser.json.asset && gltf.parser.json.asset.extras)}*/
             : ''
         }
 
-        export function Model(props${options.types ? ": JSX.IntrinsicElements['group']" : ''}) {
+        export default function Model(props${options.types ? ": JSX.IntrinsicElements['group']" : ''}) {
           ${hasInstances ? 'const instances = useContext(context);' : ''} ${
     hasAnimations ? `const group = ${options.types ? 'useRef<THREE.Group>()' : 'useRef()'};` : ''
   } ${
